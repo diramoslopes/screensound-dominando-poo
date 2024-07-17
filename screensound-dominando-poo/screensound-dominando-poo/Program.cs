@@ -1,4 +1,9 @@
-﻿Dictionary<string, List<int>> bandasRegistradas = new Dictionary<string, List<int>>();
+﻿using screensound.Modelos;
+
+Banda ira = new Banda("Ira!");
+Banda beatles = new("The Beatles");
+
+Dictionary<string, List<int>> bandasRegistradas = new Dictionary<string, List<int>>();
 bandasRegistradas.Add("Linkin Park", new List<int> { 10, 8, 6 });
 bandasRegistradas.Add("The Beatles", new List<int>());
 
