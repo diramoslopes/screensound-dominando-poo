@@ -31,7 +31,6 @@ internal class Banda
     {
         notas.Add(nota);
     }
-
     public void ExibirDiscografia()
     {
         Console.WriteLine($"Discografia da banda {Nome}");
