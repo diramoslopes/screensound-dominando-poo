@@ -16,6 +16,14 @@ internal class Program
         bandasRegistradas.Add(ira.Nome, ira);
         bandasRegistradas.Add(beatles.Nome, beatles);
 
+        Dictionary<int, Menu> opcoes = new();
+        opcoes.Add(1, new MenuRegistrarBanda());
+        opcoes.Add(2, new MenuRegistrarAlbum());
+        opcoes.Add(3, new MenuBandasRegistradas());
+        opcoes.Add(4, new MenuAvaliarBanda());
+        opcoes.Add(5, new MenuExibirDetalhes());
+        opcoes.Add(-1, new MenuSair());
+
         void ExibirLogo()
         {
             Console.WriteLine(@"
@@ -72,14 +80,14 @@ internal class Program
                     ExibirOpcoesDoMenu();
                     break;
                 case -1:
-                    Console.WriteLine("Tchau tchau :)");
+                    MenuSair menuSair = new();
+                    menuSair.Executar(bandasRegistradas);
                     break;
                 default:
                     Console.WriteLine("Opção inválida");
                     break;
             }
         }
-
 
         ExibirOpcoesDoMenu();
     }
