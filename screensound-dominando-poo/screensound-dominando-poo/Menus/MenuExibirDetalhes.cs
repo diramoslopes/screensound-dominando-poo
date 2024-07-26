@@ -30,4 +30,3 @@ internal class MenuExibirDetalhes : Menu
         }
     }
 }
-}

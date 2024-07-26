@@ -29,3 +29,4 @@ internal class MenuRegistrarAlbum : Menu
             }
         }
     }
+}
