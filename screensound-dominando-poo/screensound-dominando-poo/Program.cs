@@ -52,40 +52,15 @@ internal class Program
             string opcaoEscolhida = Console.ReadLine()!;
             int opcaoEscolhidaNumerica = int.Parse(opcaoEscolhida);
 
-            switch (opcaoEscolhidaNumerica)
+            if (opcoes.ContainsKey(opcaoEscolhidaNumerica))
             {
-                case 1:
-                    MenuRegistrarBanda menuRegistrarBanda = new();
-                    menuRegistrarBanda.Executar(bandasRegistradas);
-                    ExibirOpcoesDoMenu();
-                    break;
-                case 2:
-                    MenuRegistrarAlbum menuRegistrarAlbum = new();
-                    menuRegistrarAlbum.Executar(bandasRegistradas);
-                    ExibirOpcoesDoMenu();
-                    break;
-                case 3:
-                    MenuBandasRegistradas menuBanda = new();
-                    menuBanda.Executar(bandasRegistradas);
-                    ExibirOpcoesDoMenu();
-                    break;
-                case 4:
-                    MenuAvaliarBanda menuAvaliar = new MenuAvaliarBanda();
-                    menuAvaliar.Executar(bandasRegistradas);
-                    ExibirOpcoesDoMenu();
-                    break;
-                case 5:
-                    MenuExibirDetalhes menuExibir = new MenuExibirDetalhes();
-                    menuExibir.Executar(bandasRegistradas);
-                    ExibirOpcoesDoMenu();
-                    break;
-                case -1:
-                    MenuSair menuSair = new();
-                    menuSair.Executar(bandasRegistradas);
-                    break;
-                default:
-                    Console.WriteLine("Opção inválida");
-                    break;
+                Menu menuASerExibido = opcoes[opcaoEscolhidaNumerica];
+                menuASerExibido.Executar(bandasRegistradas);
+                if (opcaoEscolhidaNumerica > 0) ExibirOpcoesDoMenu();
+            }
+            else
+            {
+                Console.WriteLine("Opção inválida");
             }
         }
 

@@ -1,4 +1,6 @@
-﻿namespace screensound_dominando_poo.Menus;
+﻿using screensound.Modelos;
+
+namespace screensound_dominando_poo.Menus;
 
 internal class Menu
 {
@@ -10,4 +12,10 @@ internal class Menu
         Console.WriteLine(titulo);
         Console.WriteLine(asteriscos + "\n");
     }
+
+    public virtual void Executar(Dictionary<string, Banda> bandasRegistradas)
+    {
+        Console.Clear();
+    }
+
 }
